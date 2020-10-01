@@ -10,6 +10,7 @@ contract Voting is SnowflakeResolver {
 mapping(uint=>Candidate) public candidates;
 mapping(uint=>bool) public aParticipant;
 mapping(uint=>bool) public aCandidate;
+mapping(uint=>bool) private hasVoted;
 
 struct Candidate{
     uint voteCount;
@@ -49,6 +50,7 @@ modifier HasEIN(address target){
     require(checkforReg(target)==true);
     _;
 }
+
 
 event voted(uint _candidate);
 event becameCandidate(uint _candidateEIN);
@@ -129,15 +131,17 @@ function onAddition(uint ein,uint /**allocation**/,bytes memory) public senderIs
 function vote(uint _ein) public  HasEIN(msg.sender) isCandidate(_ein){
  SnowflakeInterface snowfl=SnowflakeInterface(snowflakeAddress);
  IdentityRegistryInterface idRegistry= IdentityRegistryInterface(snowfl.identityRegistryAddress());
+ 
  uint ein=idRegistry.getEIN(msg.sender);
-   require(aParticipant[ein]==true,'you are not a voter,register first');
+ 
+ require(aParticipant[ein]==true,'you are not a voter,register first');
  require (aCandidate[ein]==false,"you are a candidate");
-
  require(idRegistry.isResolverFor(ein,address(this)),"This EIN has not set this resolver.");
+ require (hasVoted[ein]==false,"you have already voted");
  
  snowfl.withdrawSnowflakeBalance(address(0),burnAmount);
- 
  candidates[_ein].voteCount++;
+ hasVoted[ein]=true;
  emit voted(_ein);
 
 }
