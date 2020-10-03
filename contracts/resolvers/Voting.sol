@@ -17,8 +17,10 @@ struct Candidate{
 }
 
 
-uint256 candidateFee= 20000000000000000000;//200tokens
+//uint256 candidateFee= 20000000000000000000;//200tokens
 uint256 regFee= 40000000000000000000;//40tokens
+
+
 uint256 burnAmount=500000000000000000000;//500tokens
 uint maxNoOfCandidates=2;
 address _snowflakeAddress;
@@ -120,36 +122,35 @@ function onAddition(uint ein,uint /**allocation**/,bytes memory) public senderIs
  function becomeCandidate(uint ein) public isParticipant(ein) isNotCandidate(ein){
    uint candidateCount= candidateEINs.length;
     require(candidateCount<=maxNoOfCandidates,"candidate limit reached!");
-      SnowflakeInterface snowfl = SnowflakeInterface(snowflakeAddress);
-    snowfl.withdrawSnowflakeBalanceFrom(ein, owner(), regFee );
     aCandidate[ein]=true;
     candidateEINs.push(ein);
     emit becameCandidate(ein);
  }
  
  //main vote function
-function vote(uint _ein) public  HasEIN(msg.sender) isCandidate(_ein){
+function vote(uint _ein) public  HasEIN(msg.sender) isCandidate(_ein) returns(bool){
  SnowflakeInterface snowfl=SnowflakeInterface(snowflakeAddress);
  IdentityRegistryInterface idRegistry= IdentityRegistryInterface(snowfl.identityRegistryAddress());
  
- uint ein=idRegistry.getEIN(msg.sender);
+ uint ein=checkEIN(msg.sender);
  
  require(aParticipant[ein]==true,'you are not a voter,register first');
  require (aCandidate[ein]==false,"you are a candidate");
  require(idRegistry.isResolverFor(ein,address(this)),"This EIN has not set this resolver.");
  require (hasVoted[ein]==false,"you have already voted");
  
- snowfl.withdrawSnowflakeBalance(address(0),burnAmount);
+ snowfl.withdrawSnowflakeBalanceFrom(ein,owner(), burnAmount);
  candidates[_ein].voteCount++;
  hasVoted[ein]=true;
- emit voted(_ein);
+  emit voted(_ein);
+ return (true);
+
 
 }
 //return the current max number of candidates
 function getMaxCandidates() public view returns(uint[] memory,uint){
     return(candidateEINs,maxNoOfCandidates);
 }
-
 
 
 
