@@ -9,7 +9,7 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "snowflakeAddress",
+						"name": "_snowflakeAddress",
 						"type": "address"
 					}
 				],
@@ -47,6 +47,19 @@
 					}
 				],
 				"name": "becameCandidate",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_deployedAddress",
+						"type": "address"
+					}
+				],
+				"name": "newElectionCreated",
 				"type": "event"
 			},
 			{
@@ -223,6 +236,53 @@
 				],
 				"payable": false,
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_electionID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_snowflakeAddress",
+						"type": "address"
+					}
+				],
+				"name": "createNewElection",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "newContract",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "electionIds",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -515,7 +575,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/VoteDapp/contracts/resolvers/Voting.sol": "Voting"
+			"localhost/VoteDapp/contracts/resolvers/electionFactory.sol": "electionFactory"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -566,6 +626,13 @@
 			"urls": [
 				"bzz-raw://37f826035bbea1f5b3320263005a95dcdd0af428be49b20457881e12eb0922b5",
 				"dweb:/ipfs/QmXcpEyes3r6MtZUuXgnojXgLvTJKvam2ffdzo4KbGxV7T"
+			]
+		},
+		"localhost/VoteDapp/contracts/resolvers/electionFactory.sol": {
+			"keccak256": "0xbdbf7b759e6ede9fe6f5757fc7407afeb34588898c824181ece6a04e5176fc36",
+			"urls": [
+				"bzz-raw://d8d4b402f0021bf41be74f463b28d315255087125b26b48d414d683f2b3fe635",
+				"dweb:/ipfs/QmUFkGBK65HcSpBCwbKjrM2ymkv8VCCMoS29vRqB8HjGtY"
 			]
 		},
 		"localhost/VoteDapp/contracts/zeppelin/ownership/Ownable.sol": {

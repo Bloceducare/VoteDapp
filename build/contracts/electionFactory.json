@@ -1,0 +1,2225 @@
+{
+  "contractName": "electionFactory",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_ein",
+          "type": "uint256"
+        }
+      ],
+      "name": "vote",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "electionIds",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "withdrawFees",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "ein",
+          "type": "uint256"
+        }
+      ],
+      "name": "becomeCandidate",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "candidates",
+      "outputs": [
+        {
+          "name": "voteCount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "checkEIN",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_target",
+          "type": "address"
+        }
+      ],
+      "name": "checkforReg",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_max",
+          "type": "uint256"
+        }
+      ],
+      "name": "setMaxCandidacy",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "get",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "callOnAddition",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "snowflakeDescription",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "snowflakeName",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "callOnRemoval",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "ein",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "onAddition",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "onRemoval",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "aCandidate",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_snowflakeAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setSnowflakeAddress",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getMaxCandidates",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256[]"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "snowflakeAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "aParticipant",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_snowflakeAddress",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_deployedAddress",
+          "type": "address"
+        }
+      ],
+      "name": "newElectionCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_candidate",
+          "type": "uint256"
+        }
+      ],
+      "name": "voted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_candidateEIN",
+          "type": "uint256"
+        }
+      ],
+      "name": "becameCandidate",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "voterEin",
+          "type": "uint256"
+        }
+      ],
+      "name": "registeredAsVoter",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_electionID",
+          "type": "uint256"
+        },
+        {
+          "name": "_snowflakeAddress",
+          "type": "address"
+        }
+      ],
+      "name": "createNewElection",
+      "outputs": [
+        {
+          "name": "newContract",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.0;\n\nimport './Voting.sol';\n\ncontract electionFactory is Voting{\naddress snowflake;\nmapping(uint256 => bool) public electionIds;\n\nevent newElectionCreated(\n    address indexed _deployedAddress\n);\n\nconstructor(address _snowflakeAddress) public {\n    snowflake=_snowflakeAddress;\n}\n\nfunction createNewElection(uint256 _electionID,address _snowflakeAddress) public returns(address newContract){\n        require(electionIds[_electionID]==false,\"election id already exists\");\n        _snowflakeAddress=snowflake;\n       Voting v = new Voting(_snowflakeAddress);\n       emit newElectionCreated(v.get());\n        return v.get();\n    //returns the new election contract address\n\n}\n\n}",
+  "sourcePath": "/home/null/Documents/VoteDapp/contracts/resolvers/electionFactory.sol",
+  "ast": {
+    "absolutePath": "/home/null/Documents/VoteDapp/contracts/resolvers/electionFactory.sol",
+    "exportedSymbols": {
+      "electionFactory": [
+        8020
+      ]
+    },
+    "id": 8021,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7956,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:21"
+      },
+      {
+        "absolutePath": "/home/null/Documents/VoteDapp/contracts/resolvers/Voting.sol",
+        "file": "./Voting.sol",
+        "id": 7957,
+        "nodeType": "ImportDirective",
+        "scope": 8021,
+        "sourceUnit": 7955,
+        "src": "25:22:21",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 7958,
+              "name": "Voting",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 7954,
+              "src": "77:6:21",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Voting_$7954",
+                "typeString": "contract Voting"
+              }
+            },
+            "id": 7959,
+            "nodeType": "InheritanceSpecifier",
+            "src": "77:6:21"
+          }
+        ],
+        "contractDependencies": [
+          2233,
+          7954,
+          8781
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 8020,
+        "linearizedBaseContracts": [
+          8020,
+          7954,
+          2233,
+          8781
+        ],
+        "name": "electionFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 7961,
+            "name": "snowflake",
+            "nodeType": "VariableDeclaration",
+            "scope": 8020,
+            "src": "85:17:21",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 7960,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "85:7:21",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 7965,
+            "name": "electionIds",
+            "nodeType": "VariableDeclaration",
+            "scope": 8020,
+            "src": "104:43:21",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_bool_$",
+              "typeString": "mapping(uint256 => bool)"
+            },
+            "typeName": {
+              "id": 7964,
+              "keyType": {
+                "id": 7962,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "112:7:21",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "104:24:21",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_bool_$",
+                "typeString": "mapping(uint256 => bool)"
+              },
+              "valueType": {
+                "id": 7963,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "123:4:21",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7969,
+            "name": "newElectionCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7968,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7967,
+                  "indexed": true,
+                  "name": "_deployedAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7969,
+                  "src": "180:32:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7966,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "180:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "174:40:21"
+            },
+            "src": "150:65:21"
+          },
+          {
+            "body": {
+              "id": 7978,
+              "nodeType": "Block",
+              "src": "263:36:21",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 7976,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 7974,
+                      "name": "snowflake",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7961,
+                      "src": "269:9:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 7975,
+                      "name": "_snowflakeAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7971,
+                      "src": "279:17:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "269:27:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 7977,
+                  "nodeType": "ExpressionStatement",
+                  "src": "269:27:21"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7979,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7972,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7971,
+                  "name": "_snowflakeAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7979,
+                  "src": "229:25:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7970,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "229:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "228:27:21"
+            },
+            "returnParameters": {
+              "id": 7973,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "263:0:21"
+            },
+            "scope": 8020,
+            "src": "217:82:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 8018,
+              "nodeType": "Block",
+              "src": "410:282:21",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 7993,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 7989,
+                            "name": "electionIds",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7965,
+                            "src": "428:11:21",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_bool_$",
+                              "typeString": "mapping(uint256 => bool)"
+                            }
+                          },
+                          "id": 7991,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 7990,
+                            "name": "_electionID",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7981,
+                            "src": "440:11:21",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "428:24:21",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "66616c7365",
+                          "id": 7992,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "454:5:21",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        },
+                        "src": "428:31:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "656c656374696f6e20696420616c726561647920657869737473",
+                        "id": 7994,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "460:28:21",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_0e827f1edfddb43b51b98737c5332818e8027f111dd11085c42e3380fbf7f036",
+                          "typeString": "literal_string \"election id already exists\""
+                        },
+                        "value": "election id already exists"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_0e827f1edfddb43b51b98737c5332818e8027f111dd11085c42e3380fbf7f036",
+                          "typeString": "literal_string \"election id already exists\""
+                        }
+                      ],
+                      "id": 7988,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8799,
+                        8800
+                      ],
+                      "referencedDeclaration": 8800,
+                      "src": "420:7:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 7995,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "420:69:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 7996,
+                  "nodeType": "ExpressionStatement",
+                  "src": "420:69:21"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 7999,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 7997,
+                      "name": "_snowflakeAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7983,
+                      "src": "499:17:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 7998,
+                      "name": "snowflake",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7961,
+                      "src": "517:9:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "499:27:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 8000,
+                  "nodeType": "ExpressionStatement",
+                  "src": "499:27:21"
+                },
+                {
+                  "assignments": [
+                    8002
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 8002,
+                      "name": "v",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 8018,
+                      "src": "535:8:21",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Voting_$7954",
+                        "typeString": "contract Voting"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 8001,
+                        "name": "Voting",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 7954,
+                        "src": "535:6:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Voting_$7954",
+                          "typeString": "contract Voting"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 8007,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 8005,
+                        "name": "_snowflakeAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7983,
+                        "src": "557:17:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 8004,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "546:10:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$returns$_t_contract$_Voting_$7954_$",
+                        "typeString": "function (address) returns (contract Voting)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 8003,
+                        "name": "Voting",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 7954,
+                        "src": "550:6:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Voting_$7954",
+                          "typeString": "contract Voting"
+                        }
+                      }
+                    },
+                    "id": 8006,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "546:29:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Voting_$7954",
+                      "typeString": "contract Voting"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "535:40:21"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 8009,
+                            "name": "v",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 8002,
+                            "src": "608:1:21",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Voting_$7954",
+                              "typeString": "contract Voting"
+                            }
+                          },
+                          "id": 8010,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "get",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 7953,
+                          "src": "608:5:21",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                            "typeString": "function () view external returns (address)"
+                          }
+                        },
+                        "id": 8011,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "608:7:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 8008,
+                      "name": "newElectionCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7969,
+                      "src": "589:18:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 8012,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "589:27:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 8013,
+                  "nodeType": "EmitStatement",
+                  "src": "584:32:21"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 8014,
+                        "name": "v",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8002,
+                        "src": "633:1:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Voting_$7954",
+                          "typeString": "contract Voting"
+                        }
+                      },
+                      "id": 8015,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "get",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7953,
+                      "src": "633:5:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                        "typeString": "function () view external returns (address)"
+                      }
+                    },
+                    "id": 8016,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "633:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 7987,
+                  "id": 8017,
+                  "nodeType": "Return",
+                  "src": "626:14:21"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 8019,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createNewElection",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7984,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7981,
+                  "name": "_electionID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8019,
+                  "src": "328:19:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7980,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "328:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7983,
+                  "name": "_snowflakeAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8019,
+                  "src": "348:25:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7982,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "348:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "327:47:21"
+            },
+            "returnParameters": {
+              "id": 7987,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7986,
+                  "name": "newContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8019,
+                  "src": "390:19:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7985,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "390:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "389:21:21"
+            },
+            "scope": 8020,
+            "src": "301:391:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 8021,
+        "src": "49:646:21"
+      }
+    ],
+    "src": "0:695:21"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/null/Documents/VoteDapp/contracts/resolvers/electionFactory.sol",
+    "exportedSymbols": {
+      "electionFactory": [
+        8020
+      ]
+    },
+    "id": 8021,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7956,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:21"
+      },
+      {
+        "absolutePath": "/home/null/Documents/VoteDapp/contracts/resolvers/Voting.sol",
+        "file": "./Voting.sol",
+        "id": 7957,
+        "nodeType": "ImportDirective",
+        "scope": 8021,
+        "sourceUnit": 7955,
+        "src": "25:22:21",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 7958,
+              "name": "Voting",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 7954,
+              "src": "77:6:21",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Voting_$7954",
+                "typeString": "contract Voting"
+              }
+            },
+            "id": 7959,
+            "nodeType": "InheritanceSpecifier",
+            "src": "77:6:21"
+          }
+        ],
+        "contractDependencies": [
+          2233,
+          7954,
+          8781
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 8020,
+        "linearizedBaseContracts": [
+          8020,
+          7954,
+          2233,
+          8781
+        ],
+        "name": "electionFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 7961,
+            "name": "snowflake",
+            "nodeType": "VariableDeclaration",
+            "scope": 8020,
+            "src": "85:17:21",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 7960,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "85:7:21",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 7965,
+            "name": "electionIds",
+            "nodeType": "VariableDeclaration",
+            "scope": 8020,
+            "src": "104:43:21",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_bool_$",
+              "typeString": "mapping(uint256 => bool)"
+            },
+            "typeName": {
+              "id": 7964,
+              "keyType": {
+                "id": 7962,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "112:7:21",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "104:24:21",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_bool_$",
+                "typeString": "mapping(uint256 => bool)"
+              },
+              "valueType": {
+                "id": 7963,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "123:4:21",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7969,
+            "name": "newElectionCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7968,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7967,
+                  "indexed": true,
+                  "name": "_deployedAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7969,
+                  "src": "180:32:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7966,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "180:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "174:40:21"
+            },
+            "src": "150:65:21"
+          },
+          {
+            "body": {
+              "id": 7978,
+              "nodeType": "Block",
+              "src": "263:36:21",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 7976,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 7974,
+                      "name": "snowflake",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7961,
+                      "src": "269:9:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 7975,
+                      "name": "_snowflakeAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7971,
+                      "src": "279:17:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "269:27:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 7977,
+                  "nodeType": "ExpressionStatement",
+                  "src": "269:27:21"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7979,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7972,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7971,
+                  "name": "_snowflakeAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7979,
+                  "src": "229:25:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7970,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "229:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "228:27:21"
+            },
+            "returnParameters": {
+              "id": 7973,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "263:0:21"
+            },
+            "scope": 8020,
+            "src": "217:82:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 8018,
+              "nodeType": "Block",
+              "src": "410:282:21",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 7993,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 7989,
+                            "name": "electionIds",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7965,
+                            "src": "428:11:21",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_bool_$",
+                              "typeString": "mapping(uint256 => bool)"
+                            }
+                          },
+                          "id": 7991,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 7990,
+                            "name": "_electionID",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7981,
+                            "src": "440:11:21",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "428:24:21",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "66616c7365",
+                          "id": 7992,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "454:5:21",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        },
+                        "src": "428:31:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "656c656374696f6e20696420616c726561647920657869737473",
+                        "id": 7994,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "460:28:21",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_0e827f1edfddb43b51b98737c5332818e8027f111dd11085c42e3380fbf7f036",
+                          "typeString": "literal_string \"election id already exists\""
+                        },
+                        "value": "election id already exists"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_0e827f1edfddb43b51b98737c5332818e8027f111dd11085c42e3380fbf7f036",
+                          "typeString": "literal_string \"election id already exists\""
+                        }
+                      ],
+                      "id": 7988,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8799,
+                        8800
+                      ],
+                      "referencedDeclaration": 8800,
+                      "src": "420:7:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 7995,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "420:69:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 7996,
+                  "nodeType": "ExpressionStatement",
+                  "src": "420:69:21"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 7999,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 7997,
+                      "name": "_snowflakeAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7983,
+                      "src": "499:17:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 7998,
+                      "name": "snowflake",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7961,
+                      "src": "517:9:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "499:27:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 8000,
+                  "nodeType": "ExpressionStatement",
+                  "src": "499:27:21"
+                },
+                {
+                  "assignments": [
+                    8002
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 8002,
+                      "name": "v",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 8018,
+                      "src": "535:8:21",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Voting_$7954",
+                        "typeString": "contract Voting"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 8001,
+                        "name": "Voting",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 7954,
+                        "src": "535:6:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Voting_$7954",
+                          "typeString": "contract Voting"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 8007,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 8005,
+                        "name": "_snowflakeAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7983,
+                        "src": "557:17:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 8004,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "546:10:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$returns$_t_contract$_Voting_$7954_$",
+                        "typeString": "function (address) returns (contract Voting)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 8003,
+                        "name": "Voting",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 7954,
+                        "src": "550:6:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Voting_$7954",
+                          "typeString": "contract Voting"
+                        }
+                      }
+                    },
+                    "id": 8006,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "546:29:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Voting_$7954",
+                      "typeString": "contract Voting"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "535:40:21"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 8009,
+                            "name": "v",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 8002,
+                            "src": "608:1:21",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Voting_$7954",
+                              "typeString": "contract Voting"
+                            }
+                          },
+                          "id": 8010,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "get",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 7953,
+                          "src": "608:5:21",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                            "typeString": "function () view external returns (address)"
+                          }
+                        },
+                        "id": 8011,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "608:7:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 8008,
+                      "name": "newElectionCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7969,
+                      "src": "589:18:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 8012,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "589:27:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 8013,
+                  "nodeType": "EmitStatement",
+                  "src": "584:32:21"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 8014,
+                        "name": "v",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8002,
+                        "src": "633:1:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Voting_$7954",
+                          "typeString": "contract Voting"
+                        }
+                      },
+                      "id": 8015,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "get",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7953,
+                      "src": "633:5:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                        "typeString": "function () view external returns (address)"
+                      }
+                    },
+                    "id": 8016,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "633:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 7987,
+                  "id": 8017,
+                  "nodeType": "Return",
+                  "src": "626:14:21"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 8019,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createNewElection",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7984,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7981,
+                  "name": "_electionID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8019,
+                  "src": "328:19:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7980,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "328:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7983,
+                  "name": "_snowflakeAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8019,
+                  "src": "348:25:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7982,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "348:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "327:47:21"
+            },
+            "returnParameters": {
+              "id": 7987,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7986,
+                  "name": "newContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8019,
+                  "src": "390:19:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7985,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "390:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "389:21:21"
+            },
+            "scope": 8020,
+            "src": "301:391:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 8021,
+        "src": "49:646:21"
+      }
+    ],
+    "src": "0:695:21"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.2+commit.1df8f40c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-10-03T20:12:02.699Z",
+  "devdoc": {
+    "methods": {
+      "isOwner()": {
+        "return": "true if `msg.sender` is the owner of the contract."
+      },
+      "owner()": {
+        "return": "the address of the owner."
+      },
+      "renounceOwnership()": {
+        "details": "Allows the current owner to relinquish control of the contract."
+      },
+      "transferOwnership(address)": {
+        "details": "Allows the current owner to transfer control of the contract to a newOwner.",
+        "params": {
+          "newOwner": "The address to transfer ownership to."
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "onAddition(uint256,uint256,bytes)": {
+        "notice": "//implement create Identity function //might not be needed for now function createId(address recoveryAddress) public returns(uint ein){ SnowflakeInterface snowfl = SnowflakeInterface(snowflakeAddress); IdentityRegistryInterface idRegistry= IdentityRegistryInterface(snowfl.identityRegistryAddress()); address[] memory _providers = new address [](2); address[] memory _resolvers= new address [](1); _providers[0]= address(this); _providers[1]= _snowflakeAddress; _resolvers[0]= address(this); return idRegistry.createIdentity(recoveryAddress,_providers,_resolvers); } *"
+      },
+      "renounceOwnership()": {
+        "notice": "Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore."
+      }
+    }
+  }
+}

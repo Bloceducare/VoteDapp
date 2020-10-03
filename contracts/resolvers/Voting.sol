@@ -159,5 +159,9 @@ function getMaxCandidates() public view returns(uint[] memory,uint){
         HydroInterface hydro = HydroInterface(snowfl.hydroTokenAddress());
         withdrawHydroBalanceTo(to, hydro.balanceOf(address(this)));
     }
+    
+    function get()public view returns(address){
+        return address(this);
+    }
 
 }
