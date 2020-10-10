@@ -11,6 +11,16 @@
 						"internalType": "address",
 						"name": "snowflakeAddress",
 						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
 					}
 				],
 				"payable": false,
@@ -527,10 +537,10 @@
 	},
 	"sources": {
 		"localhost/VoteDapp/contracts/SnowflakeResolver.sol": {
-			"keccak256": "0x67039a020c17567285d7acd386edcde71229c95c4153a6cca9b4aab0b5f93842",
+			"keccak256": "0x47767c5bf5606300e05d8a37ac8696101621cc182a608fcd5b44f7581904991f",
 			"urls": [
-				"bzz-raw://94220603662e11a7cb34bd9844de5954cd4feffb8b0a441916feaca38844e38f",
-				"dweb:/ipfs/QmXfxUoEq2Hj7BZfyBNmNvAJzn3j4uP61XKaPUMvXTpRsv"
+				"bzz-raw://772a6c8f6129ece514c7b22f1f923f068568bc54480a75e2ac441d87cc18d084",
+				"dweb:/ipfs/QmdVzXNzAaQbVfR2KNd41U6dV2XQnndJGoRM4wX5Rgcbah"
 			]
 		},
 		"localhost/VoteDapp/contracts/interfaces/HydroInterface.sol": {
@@ -562,10 +572,10 @@
 			]
 		},
 		"localhost/VoteDapp/contracts/resolvers/Voting.sol": {
-			"keccak256": "0x1dc330ac1cef447c4c14b2b71afafc30baeb9550ca7c495b07b2b0b467c3f322",
+			"keccak256": "0x7c5d85958cc3fb8a18319e4d39994ee762c2e9ea5dbf56673c4c7957a2ff0f40",
 			"urls": [
-				"bzz-raw://37f826035bbea1f5b3320263005a95dcdd0af428be49b20457881e12eb0922b5",
-				"dweb:/ipfs/QmXcpEyes3r6MtZUuXgnojXgLvTJKvam2ffdzo4KbGxV7T"
+				"bzz-raw://576fb9a1ed29af35b32a375e302d24af61dceed833c688ecd840202e47a445f5",
+				"dweb:/ipfs/Qma9iuV2xmGbjwpBRbAbgDLRsWLX98JBtSJ3j4V96kmKVo"
 			]
 		},
 		"localhost/VoteDapp/contracts/zeppelin/ownership/Ownable.sol": {
