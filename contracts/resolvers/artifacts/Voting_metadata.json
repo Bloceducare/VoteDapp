@@ -21,6 +21,11 @@
 						"internalType": "string",
 						"name": "_description",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_days",
+						"type": "uint256"
 					}
 				],
 				"payable": false,
@@ -238,12 +243,12 @@
 			{
 				"constant": true,
 				"inputs": [],
-				"name": "get",
+				"name": "getDeadline",
 				"outputs": [
 					{
-						"internalType": "address",
+						"internalType": "uint256",
 						"name": "",
-						"type": "address"
+						"type": "uint256"
 					}
 				],
 				"payable": false,
@@ -572,10 +577,10 @@
 			]
 		},
 		"localhost/VoteDapp/contracts/resolvers/Voting.sol": {
-			"keccak256": "0x7c5d85958cc3fb8a18319e4d39994ee762c2e9ea5dbf56673c4c7957a2ff0f40",
+			"keccak256": "0xd8ae4116b22a7310758f5f76fa1a2c64acda86e269b634258bd6c6729389ba73",
 			"urls": [
-				"bzz-raw://576fb9a1ed29af35b32a375e302d24af61dceed833c688ecd840202e47a445f5",
-				"dweb:/ipfs/Qma9iuV2xmGbjwpBRbAbgDLRsWLX98JBtSJ3j4V96kmKVo"
+				"bzz-raw://30d262b93286da82a7f765f8a60e2d651887ed406e0b7399e4e7a0dfd7506668",
+				"dweb:/ipfs/Qmafo8TwszdRRMoXHeGf7MtvAE76B5b7dGTjHAEiG17NJb"
 			]
 		},
 		"localhost/VoteDapp/contracts/zeppelin/ownership/Ownable.sol": {

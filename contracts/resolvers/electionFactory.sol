@@ -14,9 +14,9 @@ constructor(address _snowflake) public{
 }
 
 
-function createNewElection(uint256 _electionID,string memory _name,string memory _description) public returns(address newContract){
+function createNewElection(uint256 _electionID,string memory _name,string memory _description,uint _days) public returns(address newContract){
         require(electionIds[_electionID]==false,"election id already exists");
-       Voting v = new Voting(snowflake,_name,_description);
+       Voting v = new Voting(snowflake,_name,_description,_days);
        emit newElectionCreated(address(v),_electionID);
        electionIds[_electionID]=true;
         return address(v);

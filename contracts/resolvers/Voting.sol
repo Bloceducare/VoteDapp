@@ -24,25 +24,30 @@ uint256 regFee= 40000000000000000000;//40tokens
 uint256 burnAmount=500000000000000000000;//500tokens
 uint maxNoOfCandidates=2;
 address _snowflakeAddress;
+uint deadlineInDays;
 
 uint[] candidateEINs;
 uint[] voterEINs;
 
-
+//requires that the ein is a registered candidate
 modifier isCandidate(uint ein){
     require(aCandidate[ein]==true,'This EIN has not registered as a candidate');
     _;
 }
+
+//requires that the ein has set this contract a resolver
 modifier isParticipant(uint _ein){
     require(aParticipant[_ein]==true, 'this EIN has not registered as a participant');
     _;
 }
 
+//requires that the entered ein is not a candidate yet
 modifier isNotCandidate(uint _ein){
     require(aParticipant[_ein]==true && aCandidate[_ein]==false,"you are a candidate");
     _;
 }
 
+//requires that the yarget does not have a hydroId yet
 modifier noIdYet(address target){
     require(checkforReg(target)==false);
     _;
@@ -52,20 +57,27 @@ modifier HasEIN(address target){
     require(checkforReg(target)==true);
     _;
 }
+//requires that the deadline hasn't passed
+modifier voteStillValid(){
+    require (now<=deadlineInDays,"this election has expired");
+    _;
+}
 
 
 event voted(uint _candidate);
 event becameCandidate(uint _candidateEIN);
 event registeredAsVoter(uint voterEin);
 
- constructor (address snowflakeAddress,string memory _name,string memory _description)
+ constructor (address snowflakeAddress,string memory _name,string memory _description,uint _days)
         SnowflakeResolver(_name, _description, snowflakeAddress, true, false) public
     {
         snowflakeAddress=_snowflakeAddress;
+        deadlineInDays=now+_days*1 days;
+        
     }
 //sets the maximum no of candidates for this resolver
 //can only be set by contract owner
-function setMaxCandidacy(uint _max) public onlyOwner(){
+function setMaxCandidacy(uint _max) public  voteStillValid() onlyOwner(){
     maxNoOfCandidates=_max;
 }
 //check if address interacting with contract already has an ein
@@ -119,7 +131,7 @@ function onAddition(uint ein,uint /**allocation**/,bytes memory) public senderIs
  function onRemoval(uint, bytes memory) public senderIsSnowflake() returns (bool) {}
  
  //anyone who wants to become a candidate
- function becomeCandidate(uint ein) public isParticipant(ein) isNotCandidate(ein){
+ function becomeCandidate(uint ein) public isParticipant(ein)  voteStillValid() isNotCandidate(ein){
    uint candidateCount= candidateEINs.length;
     require(candidateCount<=maxNoOfCandidates,"candidate limit reached!");
     aCandidate[ein]=true;
@@ -128,10 +140,9 @@ function onAddition(uint ein,uint /**allocation**/,bytes memory) public senderIs
  }
  
  //main vote function
-function vote(uint _ein) public  HasEIN(msg.sender) isCandidate(_ein) returns(bool){
+function vote(uint _ein) public  HasEIN(msg.sender) isCandidate(_ein)  voteStillValid() returns(bool){
  SnowflakeInterface snowfl=SnowflakeInterface(snowflakeAddress);
  IdentityRegistryInterface idRegistry= IdentityRegistryInterface(snowfl.identityRegistryAddress());
- 
  uint ein=checkEIN(msg.sender);
  
  require(aParticipant[ein]==true,'you are not a voter,register first');
@@ -160,8 +171,8 @@ function getMaxCandidates() public view returns(uint[] memory,uint){
         withdrawHydroBalanceTo(to, hydro.balanceOf(address(this)));
     }
     
-    function get()public view returns(address){
-        return address(this);
+    function getDeadline() public view returns(uint){
+        return deadlineInDays;
     }
 
 }
