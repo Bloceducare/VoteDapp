@@ -537,10 +537,10 @@
 	},
 	"sources": {
 		"localhost/VoteDapp/contracts/SnowflakeResolver.sol": {
-			"keccak256": "0x67039a020c17567285d7acd386edcde71229c95c4153a6cca9b4aab0b5f93842",
+			"keccak256": "0x47767c5bf5606300e05d8a37ac8696101621cc182a608fcd5b44f7581904991f",
 			"urls": [
-				"bzz-raw://94220603662e11a7cb34bd9844de5954cd4feffb8b0a441916feaca38844e38f",
-				"dweb:/ipfs/QmXfxUoEq2Hj7BZfyBNmNvAJzn3j4uP61XKaPUMvXTpRsv"
+				"bzz-raw://772a6c8f6129ece514c7b22f1f923f068568bc54480a75e2ac441d87cc18d084",
+				"dweb:/ipfs/QmdVzXNzAaQbVfR2KNd41U6dV2XQnndJGoRM4wX5Rgcbah"
 			]
 		},
 		"localhost/VoteDapp/contracts/interfaces/HydroInterface.sol": {

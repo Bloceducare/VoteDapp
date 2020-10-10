@@ -8,29 +8,9 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "_snowflakeName",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "_snowflakeDescription",
-						"type": "string"
-					},
-					{
 						"internalType": "address",
 						"name": "_snowflakeAddress",
 						"type": "address"
-					},
-					{
-						"internalType": "bool",
-						"name": "_callOnAddition",
-						"type": "bool"
-					},
-					{
-						"internalType": "bool",
-						"name": "_callOnRemoval",
-						"type": "bool"
 					}
 				],
 				"payable": false,
@@ -59,36 +39,6 @@
 			{
 				"constant": true,
 				"inputs": [],
-				"name": "callOnAddition",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "callOnRemoval",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
 				"name": "isOwner",
 				"outputs": [
 					{
@@ -99,63 +49,6 @@
 				],
 				"payable": false,
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "ein",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "allowance",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bytes",
-						"name": "extraData",
-						"type": "bytes"
-					}
-				],
-				"name": "onAddition",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "ein",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bytes",
-						"name": "extraData",
-						"type": "bytes"
-					}
-				],
-				"name": "onRemoval",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -213,33 +106,133 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [],
-				"name": "snowflakeDescription",
-				"outputs": [
+				"constant": false,
+				"inputs": [
 					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
+						"internalType": "address",
+						"name": "resolver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "einFrom",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "einTo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "snowflakeCallBytes",
+						"type": "bytes"
 					}
 				],
+				"name": "snowflakeCall",
+				"outputs": [],
 				"payable": false,
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [],
-				"name": "snowflakeName",
-				"outputs": [
+				"constant": false,
+				"inputs": [
 					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
+						"internalType": "address",
+						"name": "resolver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "einFrom",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "snowflakeCallBytes",
+						"type": "bytes"
 					}
 				],
+				"name": "snowflakeCall",
+				"outputs": [],
 				"payable": false,
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "resolver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "einTo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "snowflakeCallBytes",
+						"type": "bytes"
+					}
+				],
+				"name": "snowflakeCall",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "resolver",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "snowflakeCallBytes",
+						"type": "bytes"
+					}
+				],
+				"name": "snowflakeCall",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -287,7 +280,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/VoteDapp/contracts/SnowflakeResolver.sol": "SnowflakeResolver"
+			"localhost/VoteDapp/contracts/SnowflakeVia.sol": "SnowflakeVia"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -298,32 +291,18 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/VoteDapp/contracts/SnowflakeResolver.sol": {
-			"keccak256": "0x47767c5bf5606300e05d8a37ac8696101621cc182a608fcd5b44f7581904991f",
+		"localhost/VoteDapp/contracts/SnowflakeVia.sol": {
+			"keccak256": "0xab9bf3871c1db7b5576ad7ceb59d2c423f853fff9b82777419b54b0373bdcb05",
 			"urls": [
-				"bzz-raw://772a6c8f6129ece514c7b22f1f923f068568bc54480a75e2ac441d87cc18d084",
-				"dweb:/ipfs/QmdVzXNzAaQbVfR2KNd41U6dV2XQnndJGoRM4wX5Rgcbah"
+				"bzz-raw://5c6e7054705c3b185219cc0d7231855926aee74680b217a0078fba56e8379541",
+				"dweb:/ipfs/QmUaB5iHro7jzD2nEEoUSfNE8rMzJSe7ww7ZmKUZNSTdn6"
 			]
 		},
-		"localhost/VoteDapp/contracts/interfaces/HydroInterface.sol": {
-			"keccak256": "0x3f0b755561062d9912aca9a46d728918404fe17a09cfbadfcdd498bdd6fd0b6e",
+		"localhost/VoteDapp/contracts/interfaces/SnowflakeViaInterface.sol": {
+			"keccak256": "0x145fa0d482b9f25c70b8426d7cedb07dd056d3b3ff47c6c9def3cef13167ea1f",
 			"urls": [
-				"bzz-raw://2c7728a242939831b961ce3846dcf948053a6d97e84d62d7de15fa04e050f4ed",
-				"dweb:/ipfs/QmTb87xRzJoTjn6Zqxwn4pobLaRwoKd5PTVXeJ79L59MSW"
-			]
-		},
-		"localhost/VoteDapp/contracts/interfaces/SnowflakeInterface.sol": {
-			"keccak256": "0xb34e22de661c32131d4d5bbd8f8dbf1794e5d944736ccb31870b6f75bdd322e5",
-			"urls": [
-				"bzz-raw://0bd699804c3fba3c2806fcc0d1f5e6ec10151a701b491ef00c8583c81747143d",
-				"dweb:/ipfs/QmU47iRzq9bEFcuS7uS65pJS4HgczwZEvQwgDvdNPDDpWT"
-			]
-		},
-		"localhost/VoteDapp/contracts/interfaces/SnowflakeResolverInterface.sol": {
-			"keccak256": "0x8a5595a41d86f78514dfcd6eaa0ec79482187b8ead1c8c129faab29aeb2aced1",
-			"urls": [
-				"bzz-raw://adce9474a5bdaf71df2dd13b274be5e133aea40a45ac477cff3affa7b36c04f2",
-				"dweb:/ipfs/QmPPUi5d3uqA8dgLkJY6NUJZXNkV2gHCCbgtUXdb1Q42D4"
+				"bzz-raw://fca010c7377b5acfcf7b2115dbc6cc172955e8cec427a0ab5f162b88992dcfbd",
+				"dweb:/ipfs/QmV5LoK4zj3xTSpw6UbSB8MXaXMExCkJeC557JyjiGwYBn"
 			]
 		},
 		"localhost/VoteDapp/contracts/zeppelin/ownership/Ownable.sol": {

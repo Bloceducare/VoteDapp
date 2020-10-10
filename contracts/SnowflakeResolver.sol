@@ -12,7 +12,7 @@ contract SnowflakeResolver is Ownable {
 
     address public snowflakeAddress;
 
-    bool public callOnAddition=true;
+    bool public callOnAddition;
     bool public callOnRemoval;
 
     constructor(
@@ -26,7 +26,7 @@ contract SnowflakeResolver is Ownable {
         snowflakeDescription = _snowflakeDescription;
 
         setSnowflakeAddress(_snowflakeAddress);
-SnowflakeResolver("Voting", "Vote for your candidates.", snowflakeAddress, true, false)
+
         callOnAddition = _callOnAddition;
         callOnRemoval = _callOnRemoval;
     }

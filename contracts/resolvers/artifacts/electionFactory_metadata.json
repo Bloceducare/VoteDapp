@@ -6,6 +6,18 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_snowflake",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -31,11 +43,6 @@
 						"internalType": "uint256",
 						"name": "_electionID",
 						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "_snowflakeAddress",
-						"type": "address"
 					},
 					{
 						"internalType": "string",
@@ -103,10 +110,10 @@
 	},
 	"sources": {
 		"localhost/VoteDapp/contracts/SnowflakeResolver.sol": {
-			"keccak256": "0x67039a020c17567285d7acd386edcde71229c95c4153a6cca9b4aab0b5f93842",
+			"keccak256": "0x47767c5bf5606300e05d8a37ac8696101621cc182a608fcd5b44f7581904991f",
 			"urls": [
-				"bzz-raw://94220603662e11a7cb34bd9844de5954cd4feffb8b0a441916feaca38844e38f",
-				"dweb:/ipfs/QmXfxUoEq2Hj7BZfyBNmNvAJzn3j4uP61XKaPUMvXTpRsv"
+				"bzz-raw://772a6c8f6129ece514c7b22f1f923f068568bc54480a75e2ac441d87cc18d084",
+				"dweb:/ipfs/QmdVzXNzAaQbVfR2KNd41U6dV2XQnndJGoRM4wX5Rgcbah"
 			]
 		},
 		"localhost/VoteDapp/contracts/interfaces/HydroInterface.sol": {
@@ -145,10 +152,10 @@
 			]
 		},
 		"localhost/VoteDapp/contracts/resolvers/electionFactory.sol": {
-			"keccak256": "0xbb90f9ede89a721db2d42d7c261b2e38e07a2ac4b19b9dcb949d388e3756e089",
+			"keccak256": "0x043a41facfc7de05ef1c22ed9dd64790252b3218ad29aee20bac8a633b4fe1d3",
 			"urls": [
-				"bzz-raw://57ae2fc45f8cae4968339b54360e5296b7fcaa71b057263ecb8c48e6e999bfb0",
-				"dweb:/ipfs/QmcuA5sW3pKHuChDR4rk8uHcdm37jH9ZWJ4Poq1veUZwdy"
+				"bzz-raw://f61d65cd5c6e777bfa3b6832fb3b9feaabdea4c18c75c2b7bc122d259e4006e4",
+				"dweb:/ipfs/QmTGNTu48MyvUqxVFQY3q8Q8wNoWSXTH6MMXyvCCZvfotf"
 			]
 		},
 		"localhost/VoteDapp/contracts/zeppelin/ownership/Ownable.sol": {
