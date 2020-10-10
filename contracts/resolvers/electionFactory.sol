@@ -2,24 +2,22 @@ pragma solidity ^0.5.0;
 
 import './Voting.sol';
 
-contract electionFactory is Voting{
+contract electionFactory {
 address snowflake;
 mapping(uint256 => bool) public electionIds;
 
 event newElectionCreated(
-    address indexed _deployedAddress
+    address indexed _deployedAddress,uint _id
 );
 
-constructor(address _snowflakeAddress) public {
-    snowflake=_snowflakeAddress;
-}
 
-function createNewElection(uint256 _electionID,address _snowflakeAddress) public returns(address newContract){
+function createNewElection(uint256 _electionID,address _snowflakeAddress,string memory _name,string memory _description) public returns(address newContract){
         require(electionIds[_electionID]==false,"election id already exists");
         _snowflakeAddress=snowflake;
-       Voting v = new Voting(_snowflakeAddress);
-       emit newElectionCreated(v.get());
-        return v.get();
+       Voting v = new Voting(snowflake,_name,_description);
+       emit newElectionCreated(address(v),_electionID);
+       electionIds[_electionID]=true;
+        return address(v);
     //returns the new election contract address
 
 }

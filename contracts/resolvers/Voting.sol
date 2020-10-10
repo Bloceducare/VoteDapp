@@ -58,8 +58,8 @@ event voted(uint _candidate);
 event becameCandidate(uint _candidateEIN);
 event registeredAsVoter(uint voterEin);
 
- constructor (address snowflakeAddress)
-        SnowflakeResolver("Voting", "Vote for your candidates.", snowflakeAddress, true, false) public
+ constructor (address snowflakeAddress,string memory _name,string memory _description)
+        SnowflakeResolver(_name, _description, snowflakeAddress, true, false) public
     {
         snowflakeAddress=_snowflakeAddress;
     }

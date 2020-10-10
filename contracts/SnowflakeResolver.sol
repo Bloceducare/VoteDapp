@@ -26,7 +26,7 @@ contract SnowflakeResolver is Ownable {
         snowflakeDescription = _snowflakeDescription;
 
         setSnowflakeAddress(_snowflakeAddress);
-
+SnowflakeResolver("Voting", "Vote for your candidates.", snowflakeAddress, true, false)
         callOnAddition = _callOnAddition;
         callOnRemoval = _callOnRemoval;
     }

@@ -11,6 +11,16 @@
 						"internalType": "address",
 						"name": "snowflakeAddress",
 						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
 					}
 				],
 				"payable": false,
@@ -562,10 +572,10 @@
 			]
 		},
 		"localhost/VoteDapp/contracts/resolvers/Voting.sol": {
-			"keccak256": "0x1dc330ac1cef447c4c14b2b71afafc30baeb9550ca7c495b07b2b0b467c3f322",
+			"keccak256": "0x7c5d85958cc3fb8a18319e4d39994ee762c2e9ea5dbf56673c4c7957a2ff0f40",
 			"urls": [
-				"bzz-raw://37f826035bbea1f5b3320263005a95dcdd0af428be49b20457881e12eb0922b5",
-				"dweb:/ipfs/QmXcpEyes3r6MtZUuXgnojXgLvTJKvam2ffdzo4KbGxV7T"
+				"bzz-raw://576fb9a1ed29af35b32a375e302d24af61dceed833c688ecd840202e47a445f5",
+				"dweb:/ipfs/Qma9iuV2xmGbjwpBRbAbgDLRsWLX98JBtSJ3j4V96kmKVo"
 			]
 		},
 		"localhost/VoteDapp/contracts/zeppelin/ownership/Ownable.sol": {
