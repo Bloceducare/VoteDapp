@@ -70,6 +70,19 @@
 					{
 						"indexed": false,
 						"internalType": "uint256",
+						"name": "_newDeadline",
+						"type": "uint256"
+					}
+				],
+				"name": "newDeadlineSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
 						"name": "voterEin",
 						"type": "uint256"
 					}
@@ -390,6 +403,27 @@
 				"constant": false,
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "_newDays",
+						"type": "uint256"
+					}
+				],
+				"name": "setNewDeadline",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "_snowflakeAddress",
 						"type": "address"
@@ -577,10 +611,10 @@
 			]
 		},
 		"localhost/VoteDapp/contracts/resolvers/Voting.sol": {
-			"keccak256": "0xd8ae4116b22a7310758f5f76fa1a2c64acda86e269b634258bd6c6729389ba73",
+			"keccak256": "0xef6a41518a75c63847c3be0cc330bb21ec47d5053c01408da2f1d177dbac196f",
 			"urls": [
-				"bzz-raw://30d262b93286da82a7f765f8a60e2d651887ed406e0b7399e4e7a0dfd7506668",
-				"dweb:/ipfs/Qmafo8TwszdRRMoXHeGf7MtvAE76B5b7dGTjHAEiG17NJb"
+				"bzz-raw://18a7fa4acf480d305ef99951805df5760c7b31410bed0f5bc9355808371e20ff",
+				"dweb:/ipfs/QmUPnacXoVEkU4kw2VPnL8hgQJtCX4f2PaK8BWVdhVLHhV"
 			]
 		},
 		"localhost/VoteDapp/contracts/zeppelin/ownership/Ownable.sol": {

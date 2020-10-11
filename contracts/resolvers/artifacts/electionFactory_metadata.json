@@ -150,10 +150,10 @@
 			]
 		},
 		"localhost/VoteDapp/contracts/resolvers/Voting.sol": {
-			"keccak256": "0x03a94d934a90e347bad5db017ed6e26c26a1b246ca420721ea191e458774b65a",
+			"keccak256": "0xef6a41518a75c63847c3be0cc330bb21ec47d5053c01408da2f1d177dbac196f",
 			"urls": [
-				"bzz-raw://9c029d7e9cafbd55a0db642bd62d213d65d29c499925cae8ee17fc9e749f6877",
-				"dweb:/ipfs/QmaTZAFakWzey7KX1P4WGovHmscWqATUBRRt92aDHuBaNf"
+				"bzz-raw://18a7fa4acf480d305ef99951805df5760c7b31410bed0f5bc9355808371e20ff",
+				"dweb:/ipfs/QmUPnacXoVEkU4kw2VPnL8hgQJtCX4f2PaK8BWVdhVLHhV"
 			]
 		},
 		"localhost/VoteDapp/contracts/resolvers/electionFactory.sol": {

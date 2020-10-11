@@ -47,7 +47,7 @@ modifier isNotCandidate(uint _ein){
     _;
 }
 
-//requires that the yarget does not have a hydroId yet
+//requires that the target does not have a hydroId yet
 modifier noIdYet(address target){
     require(checkforReg(target)==false);
     _;
@@ -57,6 +57,7 @@ modifier HasEIN(address target){
     require(checkforReg(target)==true);
     _;
 }
+
 //requires that the deadline hasn't passed
 modifier voteStillValid(){
     require (now<=deadlineInDays,"this election has expired");
@@ -67,6 +68,7 @@ modifier voteStillValid(){
 event voted(uint _candidate);
 event becameCandidate(uint _candidateEIN);
 event registeredAsVoter(uint voterEin);
+event newDeadlineSet(uint _newDeadline);
 
  constructor (address snowflakeAddress,string memory _name,string memory _description,uint _days)
         SnowflakeResolver(_name, _description, snowflakeAddress, true, false) public
@@ -165,10 +167,16 @@ function getMaxCandidates() public view returns(uint[] memory,uint){
 
 
 
-    function withdrawFees(address to) public onlyOwner() {
+    function withdrawFees(address to) public onlyOwner {
         SnowflakeInterface snowfl = SnowflakeInterface(snowflakeAddress);
         HydroInterface hydro = HydroInterface(snowfl.hydroTokenAddress());
         withdrawHydroBalanceTo(to, hydro.balanceOf(address(this)));
+    }
+    
+    function setNewDeadline(uint _newDays) public onlyOwner voteStillValid returns(uint){
+        deadlineInDays=now+_newDays*1 days;
+        emit newDeadlineSet(deadlineInDays);
+        return deadlineInDays;
     }
     
     function getDeadline() public view returns(uint){
