@@ -27,7 +27,7 @@ export default class ElectionFactory extends Component {
 	  this._isMounted = true;
       this.loadBlockchain();
 	}
-
+    //Dynamically loads the Smart Contract ABI using etherscan & loads the blockchain data.
     async loadBlockchain(){
     
         const ApiKey='ZPRBBU2E6Z4QMEXPI7BWMCMVK7I6XZ6ZXE';
@@ -64,7 +64,7 @@ export default class ElectionFactory extends Component {
 
   render() {    
    
-    
+        /*Sub Page of Election Page */
         let subBody = <div className="spinner"/>
         if(this.state.title !== null){
            

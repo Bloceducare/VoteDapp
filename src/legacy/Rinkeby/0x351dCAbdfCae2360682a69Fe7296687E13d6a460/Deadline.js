@@ -16,7 +16,7 @@ class Deadline extends Component {
         this._isMounted = false;
     }
 
-
+    //Loads the deadline from election cards & sets in 1 second interval
     componentDidMount(){
         this._isMounted = true;
         if(this._isMounted){setInterval(()=>this.getTimeUntil(this.props.deadline),1000)}
