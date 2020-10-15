@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    "stylelint-selector-bem-pattern",
+    "stylelint-declaration-strict-value"
+  ],
+  "rules": {
+    "scale-unlimited/declaration-strict-value": "color",
+    "plugin/selector-bem-pattern": {
+        "preset": "bem"
+      }
+    },
+  "extends": "stylelint-config-standard"
+}
