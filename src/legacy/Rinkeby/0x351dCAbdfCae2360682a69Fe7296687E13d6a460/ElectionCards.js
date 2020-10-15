@@ -29,7 +29,8 @@ export default class ElectionCards extends Component {
       this.getABI()
       this.loadBlockchain();
     }
-    
+
+    //Gets Smart Contract ABI Dynamically from etherscan
     async getABI(){
         const ApiKey='ZPRBBU2E6Z4QMEXPI7BWMCMVK7I6XZ6ZXE';
             fetch('https://api-rinkeby.etherscan.io/api?module=contract&action=getsourcecode&address='+this.props.Address+'&apikey='+ApiKey)
@@ -39,6 +40,7 @@ export default class ElectionCards extends Component {
                 }).catch(console.log)
     }
 
+    //Loads Blockain Data
     async loadBlockchain(){
     
             const web3 = new Web3(new Web3.providers.WebsocketProvider('wss://rinkeby.infura.io/ws/v3/72e114745bbf4822b987489c119f858b'));  

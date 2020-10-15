@@ -72,9 +72,6 @@ export default class ElectionFactory extends Component {
             console.log()
         })
 
-
-
-
         const network = await web3.eth.net.getNetworkType();
         const accounts = await web3.eth.getAccounts();
         const blockNumber = await web3.eth.getBlockNumber();
@@ -115,7 +112,7 @@ export default class ElectionFactory extends Component {
         },7000))
 
         }
-
+    /*Pginate Election Cards in 6 items*/    
     onChangePage(pageOfItems) {
         this.setState({loading:false})
         this.setState({ pageOfItems,loading:true});
@@ -123,7 +120,7 @@ export default class ElectionFactory extends Component {
 	}
     
 
-    /*NAVIGATE FACTORY PAGE*/
+    /*NAVIGATE Factory Page*/
     factoryPage=()=>{
         this.setState({page:1,subPage:1},()=>console.log())
     }
@@ -132,6 +129,7 @@ export default class ElectionFactory extends Component {
         this.setState({page:2,subPage:1},()=>console.log())
     }
 
+    /*NAVIGATE Between Factory Page & Election Page*/
     electionList=()=>{
         this.setState({subPage:1},()=>console.log())
     }
@@ -142,9 +140,7 @@ export default class ElectionFactory extends Component {
     }
 
 
-
-
-    /*NAVIGATE ELECTION PAGE*/
+    /*NAVIGATE Election Page*/
     subPageRegistration=()=>{
         this.setState({subPage:1},()=>console.log())
     }
@@ -163,7 +159,7 @@ export default class ElectionFactory extends Component {
     }
 
 
-
+    /*Sets the Election Contract according to what user selected*/
     setPage=(address,id,ein,subPage)=>{
     if(address !== null && id !== null & ein !== null){
     this.setState({address:address,id:id,ein:ein},()=>this.pollPage());

@@ -30,6 +30,7 @@ export default class ChartPage extends Component {
             deadline:''
             
         }
+        //Binds Option when selecting a candidate to vote
         this.handleChangeCandidate = this.handleChangeCandidate.bind(this)
 	}
 
@@ -40,7 +41,8 @@ export default class ChartPage extends Component {
           this.loadBlockchain();
             }
       }
-
+    
+    //Connecting & getting Data from the blockchain.
     async loadBlockchain(){
        
         let ethereum= window.ethereum;
@@ -92,7 +94,6 @@ export default class ChartPage extends Component {
         this.setState({maxCandidates:maxCandidates[0],maxNumber:maxCandidates[1]})
 
         
-        
         for(var m=0; m<this.state.maxCandidates.length; m++){
             const voteCount = await votingContract.methods.candidates(this.state.maxCandidates[m]).call();
             const userName = await raindrop.methods.getDetails(this.state.maxCandidates[m]).call();        
@@ -100,7 +101,7 @@ export default class ChartPage extends Component {
             this.setState({userName:[...this.state.userName,userName[1]]});
            
         }
-        
+        //listens to incoming votes in real time.
         votingContract.events.voted({toBlock:'latest'})
         .on('data',async(log) => {  
    
@@ -114,6 +115,7 @@ export default class ChartPage extends Component {
             
         })
 
+        //listens to added candidates in real time.
         votingContract.events.becameCandidate({toBlock:'latest'})
         .on('data',async(event) => { 
             const newCandidate = await raindrop.methods.getDetails(parseInt(event.returnValues._candidateEIN)).call();
@@ -127,12 +129,13 @@ export default class ChartPage extends Component {
             candidate:this.state.maxCandidates[0]},()=>console.log())
         }
 
- 
+    //Sets the value of candidates according to what the user has selected.
     handleChangeCandidate (event){
         let candidates = event.target.value;
         this.setState({candidate:candidates});      
       }
 
+      
    async web3NewData(){
         this.setState({votes:[]});
         for(var m=0; m<this.state.maxCandidates.length; m++){
@@ -158,6 +161,7 @@ export default class ChartPage extends Component {
         barfontsize = 14;
     }
     
+    //Bar Char Data & Styling
     if(!this.state.loading)
     this.BarData = (canvas) => {
         const ctx = canvas.getContext("2d")

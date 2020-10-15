@@ -1,4 +1,5 @@
 /* eslint-disable */
+//Component for Election Deadline on Charts
 
 import React, { Component } from 'react';
 
@@ -16,7 +17,7 @@ class ChartDeadline extends Component {
         this._isMounted = false;
     }
 
-
+//Mounts the Deadline from chart page every 1 second
     componentDidMount(){
         this._isMounted = true;
         if(this._isMounted){setInterval(()=>this.getTimeUntil(this.props.deadline),1000)}
