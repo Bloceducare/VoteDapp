@@ -1,0 +1,57 @@
+{
+	"0x16fD6e2E1C4afB9C4e7B901141706596317e4ceB": {
+		"title": "Status",
+		"category": "Tools",
+		"price": "1"
+	},
+	"0x26098F10E1539a6b75998AfB1DA552B8fD0AE404": {
+		"title": "PetFriend",
+		"category": "Tools",
+		"price": "1"
+	},
+	"0x2930Cf9EE8E03C3E06Fa1828cCD8E371323Fde0f": {
+		"title": "Oxide",
+		"category": "Fintech",
+		"price": "0"
+	},
+	"dating-dapp": {
+		"title": "dateME",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"0x351dCAbdfCae2360682a69Fe7296687E13d6a460": {
+		"title": "Voteum",
+		"category": "Under Development",
+		"price": "2000"
+	},
+	"donation-dapp": {
+		"title": "Donations dApp",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"lottery-dapp": {
+		"title": "Lotteryx",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"crowdfunding-dapp": {
+		"title": "DCrowdFunding",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"password-dapp": {
+		"title": "dPasswords",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"giftcard-dapp": {
+		"title": "dGiftcards",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"freelance-dapp": {
+		"title": "dFreelanceJobs",
+		"category": "Under Development",
+		"price": "0"
+	}
+}
