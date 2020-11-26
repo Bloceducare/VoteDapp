@@ -18,10 +18,13 @@ struct Candidate{
 
 
 //uint256 candidateFee= 20000000000000000000;//200tokens
-uint256 regFee= 40000000000000000000;//40tokens
+uint256 regFee= 100000000000000000000;//100tokens
+
+//this is the routed address where all fees will go to be later burned
+address public FEEWALLET;
 
 
-uint256 burnAmount=500000000000000000000;//500tokens
+uint256 burnAmount=1000000000000000000000;//1000tokens
 uint maxNoOfCandidates=2;
 address _snowflakeAddress;
 uint deadlineInDays;
@@ -70,11 +73,12 @@ event becameCandidate(uint _candidateEIN);
 event registeredAsVoter(uint voterEin);
 event newDeadlineSet(uint _newDeadline);
 
- constructor (address snowflakeAddress,string memory _name,string memory _description,uint _days)
+ constructor (address snowflakeAddress,string memory _name,string memory _description,uint _days,address feeOwner)
         SnowflakeResolver(_name, _description, snowflakeAddress, true, false) public
     {
         snowflakeAddress=_snowflakeAddress;
         deadlineInDays=now+_days*1 days;
+        FEEWALLET=feeOwner;
         
     }
 //sets the maximum no of candidates for this resolver
@@ -120,10 +124,10 @@ function createId(address recoveryAddress) public returns(uint ein){
 **/
 //called to register any new actor in the system
 //makes the ein to be a participant in the system
-//this might have to be done from the frontend with the ({from: snowflakeAddress}) tag because of the modifier
+//a fee of 100 tokens is required
 function onAddition(uint ein,uint /**allocation**/,bytes memory) public senderIsSnowflake() returns (bool){
     SnowflakeInterface snowfl = SnowflakeInterface(snowflakeAddress);
-    snowfl.withdrawSnowflakeBalanceFrom(ein, owner(), regFee );
+    snowfl.withdrawSnowflakeBalanceFrom(ein, FEEWALLET, regFee );
     aParticipant[ein]=true;
      emit registeredAsVoter(ein);
     return true;
@@ -133,9 +137,12 @@ function onAddition(uint ein,uint /**allocation**/,bytes memory) public senderIs
  function onRemoval(uint, bytes memory) public senderIsSnowflake() returns (bool) {}
  
  //anyone who wants to become a candidate
+ //1000 hydro tokens are deducted from the ein of msg.sender and sent to FEEWALLET
  function becomeCandidate(uint ein) public isParticipant(ein)  voteStillValid() isNotCandidate(ein){
+     SnowflakeInterface snowfl=SnowflakeInterface(snowflakeAddress);
    uint candidateCount= candidateEINs.length;
     require(candidateCount<=maxNoOfCandidates,"candidate limit reached!");
+    snowfl.withdrawSnowflakeBalanceFrom(ein,FEEWALLET, burnAmount);
     aCandidate[ein]=true;
     candidateEINs.push(ein);
     emit becameCandidate(ein);
@@ -152,7 +159,6 @@ function vote(uint _ein) public  HasEIN(msg.sender) isCandidate(_ein)  voteStill
  require(idRegistry.isResolverFor(ein,address(this)),"This EIN has not set this resolver.");
  require (hasVoted[ein]==false,"you have already voted");
  
- snowfl.withdrawSnowflakeBalanceFrom(ein,owner(), burnAmount);
  candidates[_ein].voteCount++;
  hasVoted[ein]=true;
   emit voted(_ein);

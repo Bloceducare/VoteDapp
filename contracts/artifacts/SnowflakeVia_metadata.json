@@ -280,7 +280,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/VoteDapp/contracts/SnowflakeVia.sol": "SnowflakeVia"
+			"localhost/contracts/SnowflakeVia.sol": "SnowflakeVia"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -291,21 +291,21 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/VoteDapp/contracts/SnowflakeVia.sol": {
+		"localhost/contracts/SnowflakeVia.sol": {
 			"keccak256": "0xab9bf3871c1db7b5576ad7ceb59d2c423f853fff9b82777419b54b0373bdcb05",
 			"urls": [
 				"bzz-raw://5c6e7054705c3b185219cc0d7231855926aee74680b217a0078fba56e8379541",
 				"dweb:/ipfs/QmUaB5iHro7jzD2nEEoUSfNE8rMzJSe7ww7ZmKUZNSTdn6"
 			]
 		},
-		"localhost/VoteDapp/contracts/interfaces/SnowflakeViaInterface.sol": {
+		"localhost/contracts/interfaces/SnowflakeViaInterface.sol": {
 			"keccak256": "0x145fa0d482b9f25c70b8426d7cedb07dd056d3b3ff47c6c9def3cef13167ea1f",
 			"urls": [
 				"bzz-raw://fca010c7377b5acfcf7b2115dbc6cc172955e8cec427a0ab5f162b88992dcfbd",
 				"dweb:/ipfs/QmV5LoK4zj3xTSpw6UbSB8MXaXMExCkJeC557JyjiGwYBn"
 			]
 		},
-		"localhost/VoteDapp/contracts/zeppelin/ownership/Ownable.sol": {
+		"localhost/contracts/zeppelin/ownership/Ownable.sol": {
 			"keccak256": "0x1fbe7f67d6b8ac1f5aff86a9da41833273e073c47ce1e160f9addd9c64d9ff1d",
 			"urls": [
 				"bzz-raw://93d3790757d1984cef393a056010cc4269002c1aa93d635fabc8f169ef0707e8",
