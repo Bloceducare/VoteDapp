@@ -57,3 +57,4 @@ interface SnowflakeInterface {
     function withdrawSnowflakeBalanceFromVia(uint einFrom, address via, address to, uint amount, bytes calldata _bytes)
         external;
 }
+

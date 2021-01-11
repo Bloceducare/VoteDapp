@@ -246,7 +246,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/Hydro/smart-contracts/snowflake/contracts/interfaces/ClientRaindropInterface.sol": "ClientRaindropInterface"
+			"localhost/contracts/interfaces/ClientRaindropInterface.sol": "ClientRaindropInterface"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -257,7 +257,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/Hydro/smart-contracts/snowflake/contracts/interfaces/ClientRaindropInterface.sol": {
+		"localhost/contracts/interfaces/ClientRaindropInterface.sol": {
 			"keccak256": "0x930f9d9bc7a774fd48e784332db8866e59ddeed9cc6218b3f49d0fd9ad62acda",
 			"urls": [
 				"bzz-raw://7380e1bb33daa3cc5014cb96c66fb036b0ec54dc40bde31e5233d7e8999dacf9",

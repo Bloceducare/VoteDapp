@@ -773,7 +773,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/Hydro/smart-contracts/snowflake/contracts/interfaces/SnowflakeInterface.sol": "SnowflakeInterface"
+			"localhost/contracts/interfaces/SnowflakeInterface.sol": "SnowflakeInterface"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -784,11 +784,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/Hydro/smart-contracts/snowflake/contracts/interfaces/SnowflakeInterface.sol": {
-			"keccak256": "0xb34e22de661c32131d4d5bbd8f8dbf1794e5d944736ccb31870b6f75bdd322e5",
+		"localhost/contracts/interfaces/SnowflakeInterface.sol": {
+			"keccak256": "0x22075888d9ca00c08120612beb55e5afdaa5583c9419a5b76d4d1fe0bd0c68a4",
 			"urls": [
-				"bzz-raw://0bd699804c3fba3c2806fcc0d1f5e6ec10151a701b491ef00c8583c81747143d",
-				"dweb:/ipfs/QmU47iRzq9bEFcuS7uS65pJS4HgczwZEvQwgDvdNPDDpWT"
+				"bzz-raw://47570c4cafb8e8706facc9be7d69d1c8e502d8d9ac17fad8988a84dd9ba219ee",
+				"dweb:/ipfs/QmPGoT7QkxNZ48fjc7GYSLfFyJV42P9uMV5Dnfy4fWEEjd"
 			]
 		}
 	},

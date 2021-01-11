@@ -8,17 +8,16 @@ address feeOwner;
 mapping(uint256 => bool) public electionIds;
 
 event newElectionCreated(
-    address indexed _deployedAddress,uint _id
+    address indexed _deployedAddress,uint256 _id
 );
 constructor(address _snowflake) public{
     snowflake=_snowflake;
-    feeOwner=msg.sender;
 }
 
 
-function createNewElection(uint256 _electionID,string memory _name,string memory _description,uint _days) public returns(address newContract){
+function createNewElection(uint256 _electionID,string memory _name,string memory _description,uint256 _days) public returns(address newContract){
         require(electionIds[_electionID]==false,"election id already exists");
-       Voting v = new Voting(snowflake,_name,_description,_days,feeOwner);
+       Voting v = new Voting(snowflake,_name,_description,_days);
        emit newElectionCreated(address(v),_electionID);
        electionIds[_electionID]=true;
         return address(v);

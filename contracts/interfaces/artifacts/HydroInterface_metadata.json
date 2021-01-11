@@ -182,6 +182,27 @@
 				"type": "function"
 			},
 			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "burnAmount",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"constant": true,
 				"inputs": [],
 				"name": "totalSupply",
@@ -263,7 +284,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/Hydro/smart-contracts/snowflake/contracts/interfaces/HydroInterface.sol": "HydroInterface"
+			"localhost/contracts/interfaces/HydroInterface.sol": "HydroInterface"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -274,11 +295,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/Hydro/smart-contracts/snowflake/contracts/interfaces/HydroInterface.sol": {
-			"keccak256": "0x3f0b755561062d9912aca9a46d728918404fe17a09cfbadfcdd498bdd6fd0b6e",
+		"localhost/contracts/interfaces/HydroInterface.sol": {
+			"keccak256": "0xd2cf83a1bc63bc4f439ae98e6a95cb0eed24a1b36fe36a1003ad481cac15cc7b",
 			"urls": [
-				"bzz-raw://2c7728a242939831b961ce3846dcf948053a6d97e84d62d7de15fa04e050f4ed",
-				"dweb:/ipfs/QmTb87xRzJoTjn6Zqxwn4pobLaRwoKd5PTVXeJ79L59MSW"
+				"bzz-raw://c719482ab4d6bfa3867bab6a4492bb1efa5f2b8ee7dde2e7aaac0611b2220263",
+				"dweb:/ipfs/QmevLAgXu8e3M7RL4bgZToR9unE1TUaw11j6LavwiDeSGS"
 			]
 		}
 	},
