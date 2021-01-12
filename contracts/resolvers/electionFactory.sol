@@ -6,6 +6,7 @@ contract electionFactory {
 address snowflake;
 address feeOwner;
 mapping(uint256 => bool) public electionIds;
+address[] electionsCreated;
 
 event newElectionCreated(
     address indexed _deployedAddress,uint256 _id
@@ -20,9 +21,19 @@ function createNewElection(uint256 _electionID,string memory _name,string memory
        Voting v = new Voting(snowflake,_name,_description,_days);
        emit newElectionCreated(address(v),_electionID);
        electionIds[_electionID]=true;
+       electionsCreated.push(address(v));
         return address(v);
     //returns the new election contract address
 
+}
+
+function checkElections() public view returns(address[] memory){
+    return electionsCreated;
+}
+
+function checkElectionDetails(address _election) public view returns(uint,uint){ 
+    Voting v=Voting(_election);
+    v.getDetails();
 }
 
 }

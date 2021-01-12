@@ -29,6 +29,8 @@ uint256 deadlineInDays;
 
 uint256[] candidateEINs;
 uint256[] voterEINs;
+uint256 voters=0;
+uint256 registered=0;
 
 //requires that the ein is a registered candidate
 modifier isCandidate(uint256 ein){
@@ -127,6 +129,7 @@ function onAddition(uint256 ein,uint256 /**allocation**/,bytes memory) public se
      HydroInterface hydro = HydroInterface(snowfl.hydroTokenAddress());
      hydro.burn(regFee);
     aParticipant[ein]=true;
+    registered++;
      emit registeredAsVoter(ein);
     return true;
    
@@ -161,6 +164,7 @@ function vote(uint256 _ein) public  HasEIN(msg.sender) isCandidate(_ein)  voteSt
  
  candidates[_ein].voteCount++;
  hasVoted[ein]=true;
+ voters++;
   emit voted(_ein);
  return (true);
 
@@ -188,5 +192,8 @@ function getMaxCandidates() public view returns(uint256[] memory,uint256){
     function getDeadline() public view returns(uint256){
         return deadlineInDays;
     }
-
+    
+    function getDetails() public view returns(uint256, uint256){
+    return (voters,registered);
+}
 }

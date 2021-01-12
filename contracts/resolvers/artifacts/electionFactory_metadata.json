@@ -37,6 +37,47 @@
 				"type": "event"
 			},
 			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_election",
+						"type": "address"
+					}
+				],
+				"name": "checkElectionDetails",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "checkElections",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"constant": false,
 				"inputs": [
 					{
@@ -150,17 +191,17 @@
 			]
 		},
 		"localhost/contracts/resolvers/Voting.sol": {
-			"keccak256": "0xe5710b1e5d7071f4a4726645a854e1c5a6ce3dc450ceefe383250c624df8c8ad",
+			"keccak256": "0xdbc28be5883c43d3e6cbbb1cd875811ccdcfb436503cbffadbc5cfc28ae896a8",
 			"urls": [
-				"bzz-raw://e61038dcb7c767bb8908288b373c1dfe92cb9590dcfe0eda1b75601103746fb6",
-				"dweb:/ipfs/QmequEBeio6TzaNaLC8rd1xZy1vnnxAoFhz3ep83Knu4Gt"
+				"bzz-raw://0d2c9971e96c44bb6334e8b37cb848cb8ee99b2a84f212eef43c138b1d8fec00",
+				"dweb:/ipfs/QmdRGDPz9nSuofZSMqmFupUSpvNrxWpnoGHM54ogbTEGug"
 			]
 		},
 		"localhost/contracts/resolvers/electionFactory.sol": {
-			"keccak256": "0x83c14d93d04222bcd8741b965a89ec23c25a6cc284272e263b2ef383610f6a9e",
+			"keccak256": "0x598bb015887bbaa35cc70a183ce5d861b08a33f630d4034107e687ad85ed7de2",
 			"urls": [
-				"bzz-raw://3caa00b297417af5140c226fb147513fac0dc58171d2fd1a2caa9b5a41e0bdd6",
-				"dweb:/ipfs/QmYSpWY6CLtq7ZRjgvRuw4ygW5Vcmzinw73xbfwwo6m61F"
+				"bzz-raw://3d585b593289ad5d44603e053e7723ed75f71fa36fd1471b4b2c2617d433cc00",
+				"dweb:/ipfs/QmdaqxT54LSfrjayuLFCJU6rbHu5ey5BRGCs9Y4ffE9foh"
 			]
 		},
 		"localhost/contracts/zeppelin/ownership/Ownable.sol": {
