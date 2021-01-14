@@ -18,7 +18,7 @@ struct Candidate{
 
 
 
-uint256 regFee= 100000000000000000000;//100tokens
+uint256 voteFee= 100000000000000000000;//100tokens
 
 
 
@@ -125,9 +125,8 @@ function createId(address recoveryAddress) public returns(uint256 ein){
 //makes the ein to be a participant in the system
 //a fee of 100 tokens is required
 function onAddition(uint256 ein,uint256 /**allocation**/,bytes memory) public senderIsSnowflake() returns (bool){
-    SnowflakeInterface snowfl = SnowflakeInterface(snowflakeAddress);
-     HydroInterface hydro = HydroInterface(snowfl.hydroTokenAddress());
-     hydro.burn(regFee);
+   // SnowflakeInterface snowfl = SnowflakeInterface(snowflakeAddress);
+   //  HydroInterface hydro = HydroInterface(snowfl.hydroTokenAddress());
     aParticipant[ein]=true;
     registered++;
      emit registeredAsVoter(ein);
@@ -140,11 +139,10 @@ function onAddition(uint256 ein,uint256 /**allocation**/,bytes memory) public se
  //anyone who wants to become a candidate
  //1000 hydro tokens are deducted from the wallet of msg.sender and burnt
  function becomeCandidate(uint256 ein) public isParticipant(ein)  voteStillValid() isNotCandidate(ein){
-     SnowflakeInterface snowfl=SnowflakeInterface(snowflakeAddress);
-     HydroInterface hydro = HydroInterface(snowfl.hydroTokenAddress());
+    // SnowflakeInterface snowfl=SnowflakeInterface(snowflakeAddress);
+    // HydroInterface hydro = HydroInterface(snowfl.hydroTokenAddress());
     uint256 candidateCount= candidateEINs.length;
     require(candidateCount<=maxNoOfCandidates,"candidate limit reached!");
-    hydro.burn(burnAmount);
     aCandidate[ein]=true;
     candidateEINs.push(ein);
     emit becameCandidate(ein);
@@ -154,14 +152,15 @@ function onAddition(uint256 ein,uint256 /**allocation**/,bytes memory) public se
 function vote(uint256 _ein) public  HasEIN(msg.sender) isCandidate(_ein)  voteStillValid() returns(bool){
  SnowflakeInterface snowfl=SnowflakeInterface(snowflakeAddress);
  IdentityRegistryInterface idRegistry= IdentityRegistryInterface(snowfl.identityRegistryAddress());
- //HydroInterface hydro = HydroInterface(snowfl.hydroTokenAddress());
+ HydroInterface hydro = HydroInterface(snowfl.hydroTokenAddress());
  uint256 ein=checkEIN(msg.sender);
+
  
  require(aParticipant[ein]==true,'you are not a voter,register first');
  require (aCandidate[ein]==false,"you are a candidate");
  require(idRegistry.isResolverFor(ein,address(this)),"This EIN has not set this resolver.");
  require (hasVoted[ein]==false,"you have already voted");
- 
+  hydro.burnFrom(msg.sender,voteFee);
  candidates[_ein].voteCount++;
  hasVoted[ein]=true;
  voters++;
