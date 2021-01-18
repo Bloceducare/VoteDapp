@@ -1,33 +1,155 @@
 {
 	"compiler": {
-		"version": "0.5.0+commit.1d4f565a"
+		"version": "0.5.17+commit.d19bba13"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
-				"constant": false,
 				"inputs": [
 					{
-						"name": "_ein",
+						"internalType": "address",
+						"name": "snowflakeAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_days",
 						"type": "uint256"
 					}
 				],
-				"name": "vote",
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_candidateEIN",
+						"type": "uint256"
+					}
+				],
+				"name": "becameCandidate",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_newDeadline",
+						"type": "uint256"
+					}
+				],
+				"name": "newDeadlineSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "voterEin",
+						"type": "uint256"
+					}
+				],
+				"name": "registeredAsVoter",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_candidate",
+						"type": "uint256"
+					}
+				],
+				"name": "voted",
+				"type": "event"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "aCandidate",
 				"outputs": [
 					{
+						"internalType": "bool",
 						"name": "",
 						"type": "bool"
 					}
 				],
 				"payable": false,
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "aParticipant",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
 				"constant": false,
 				"inputs": [
 					{
+						"internalType": "uint256",
 						"name": "ein",
 						"type": "uint256"
 					}
@@ -39,28 +161,40 @@
 				"type": "function"
 			},
 			{
-				"constant": false,
-				"inputs": [
-					{
-						"name": "_newDays",
-						"type": "uint256"
-					}
-				],
-				"name": "setNewDeadline",
+				"constant": true,
+				"inputs": [],
+				"name": "callOnAddition",
 				"outputs": [
 					{
+						"internalType": "bool",
 						"name": "",
-						"type": "uint256"
+						"type": "bool"
 					}
 				],
 				"payable": false,
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "callOnRemoval",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
 				"constant": true,
 				"inputs": [
 					{
+						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
@@ -68,6 +202,7 @@
 				"name": "candidates",
 				"outputs": [
 					{
+						"internalType": "uint256",
 						"name": "voteCount",
 						"type": "uint256"
 					}
@@ -80,6 +215,7 @@
 				"constant": false,
 				"inputs": [
 					{
+						"internalType": "address",
 						"name": "_address",
 						"type": "address"
 					}
@@ -87,8 +223,30 @@
 				"name": "checkEIN",
 				"outputs": [
 					{
+						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_target",
+						"type": "address"
+					}
+				],
+				"name": "checkforReg",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
 					}
 				],
 				"payable": false,
@@ -101,8 +259,64 @@
 				"name": "getDeadline",
 				"outputs": [
 					{
+						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getDetails",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getMaxCandidates",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
 					}
 				],
 				"payable": false,
@@ -113,13 +327,25 @@
 				"constant": false,
 				"inputs": [
 					{
-						"name": "_target",
-						"type": "address"
+						"internalType": "uint256",
+						"name": "ein",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
 					}
 				],
-				"name": "checkforReg",
+				"name": "onAddition",
 				"outputs": [
 					{
+						"internalType": "bool",
 						"name": "",
 						"type": "bool"
 					}
@@ -132,14 +358,41 @@
 				"constant": false,
 				"inputs": [
 					{
-						"name": "_max",
+						"internalType": "uint256",
+						"name": "",
 						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
 					}
 				],
-				"name": "setMaxCandidacy",
-				"outputs": [],
+				"name": "onRemoval",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
 				"payable": false,
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -152,13 +405,65 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [],
-				"name": "callOnAddition",
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_max",
+						"type": "uint256"
+					}
+				],
+				"name": "setMaxCandidacy",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_newDays",
+						"type": "uint256"
+					}
+				],
+				"name": "setNewDeadline",
 				"outputs": [
 					{
+						"internalType": "uint256",
 						"name": "",
-						"type": "bool"
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_snowflakeAddress",
+						"type": "address"
+					}
+				],
+				"name": "setSnowflakeAddress",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "snowflakeAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"payable": false,
@@ -171,6 +476,7 @@
 				"name": "snowflakeDescription",
 				"outputs": [
 					{
+						"internalType": "string",
 						"name": "",
 						"type": "string"
 					}
@@ -185,6 +491,7 @@
 				"name": "snowflakeName",
 				"outputs": [
 					{
+						"internalType": "string",
 						"name": "",
 						"type": "string"
 					}
@@ -194,152 +501,10 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [],
-				"name": "owner",
-				"outputs": [
-					{
-						"name": "",
-						"type": "address"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "callOnRemoval",
-				"outputs": [
-					{
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "isOwner",
-				"outputs": [
-					{
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"constant": false,
 				"inputs": [
 					{
-						"name": "ein",
-						"type": "uint256"
-					},
-					{
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"name": "",
-						"type": "bytes"
-					}
-				],
-				"name": "onAddition",
-				"outputs": [
-					{
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"name": "",
-						"type": "bytes"
-					}
-				],
-				"name": "onRemoval",
-				"outputs": [
-					{
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [
-					{
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "aCandidate",
-				"outputs": [
-					{
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"name": "_snowflakeAddress",
-						"type": "address"
-					}
-				],
-				"name": "setSnowflakeAddress",
-				"outputs": [],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "getMaxCandidates",
-				"outputs": [
-					{
-						"name": "",
-						"type": "uint256[]"
-					},
-					{
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
+						"internalType": "address",
 						"name": "newOwner",
 						"type": "address"
 					}
@@ -351,143 +516,25 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [],
-				"name": "snowflakeAddress",
-				"outputs": [
-					{
-						"name": "",
-						"type": "address"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "getDetails",
-				"outputs": [
-					{
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
+				"constant": false,
 				"inputs": [
 					{
-						"name": "",
+						"internalType": "uint256",
+						"name": "_ein",
 						"type": "uint256"
 					}
 				],
-				"name": "aParticipant",
+				"name": "vote",
 				"outputs": [
 					{
+						"internalType": "bool",
 						"name": "",
 						"type": "bool"
 					}
 				],
 				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"name": "snowflakeAddress",
-						"type": "address"
-					},
-					{
-						"name": "_name",
-						"type": "string"
-					},
-					{
-						"name": "_description",
-						"type": "string"
-					},
-					{
-						"name": "_days",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
 				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"name": "_candidate",
-						"type": "uint256"
-					}
-				],
-				"name": "voted",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"name": "_candidateEIN",
-						"type": "uint256"
-					}
-				],
-				"name": "becameCandidate",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"name": "voterEin",
-						"type": "uint256"
-					}
-				],
-				"name": "registeredAsVoter",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"name": "_newDeadline",
-						"type": "uint256"
-					}
-				],
-				"name": "newDeadlineSet",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"name": "previousOwner",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"name": "newOwner",
-						"type": "address"
-					}
-				],
-				"name": "OwnershipTransferred",
-				"type": "event"
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -527,7 +574,7 @@
 		"compilationTarget": {
 			"localhost/contracts/resolvers/Voting.sol": "Voting"
 		},
-		"evmVersion": "byzantium",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"optimizer": {
 			"enabled": false,
@@ -539,43 +586,50 @@
 		"localhost/contracts/SnowflakeResolver.sol": {
 			"keccak256": "0x47767c5bf5606300e05d8a37ac8696101621cc182a608fcd5b44f7581904991f",
 			"urls": [
-				"bzzr://17d4af2410f7c74dad682be3318cb01b467e76aee806639a202385489e90546b"
+				"bzz-raw://772a6c8f6129ece514c7b22f1f923f068568bc54480a75e2ac441d87cc18d084",
+				"dweb:/ipfs/QmdVzXNzAaQbVfR2KNd41U6dV2XQnndJGoRM4wX5Rgcbah"
 			]
 		},
 		"localhost/contracts/interfaces/HydroInterface.sol": {
 			"keccak256": "0x56647cb0f09d042392f3e117790be3fccd7622594ef904a4fee4f46f91c21683",
 			"urls": [
-				"bzzr://eb0b29b84efa1d37f211f544ed39011c4b521482f04999381f7daebb527552c8"
+				"bzz-raw://e2de34c8f607732b8f4af1e5d1b5da86975c5d2985e7adf5d1c94f4de770d214",
+				"dweb:/ipfs/QmcA9zkG6KxzmsY6atKgVb3QPtEZ37Bq7zYouYGhBuVUxm"
 			]
 		},
 		"localhost/contracts/interfaces/IdentityRegistryInterface.sol": {
 			"keccak256": "0xb559191dbd30da97a8b5759a895d7f4eff420eedc55b0786ae7206fbe384dc15",
 			"urls": [
-				"bzzr://a6122de11af1f831b1a93dba66aabe9e299f0040cf3404510790453addc6e0d9"
+				"bzz-raw://4ca73a9731d9a2dd9603593b2d847af126e20af8d4242edb91d5bfba5107149d",
+				"dweb:/ipfs/QmdJ5oW52QuXipANPCy8sJPwULkdXmVWjAPEWgPoy9oudk"
 			]
 		},
 		"localhost/contracts/interfaces/SnowflakeInterface.sol": {
 			"keccak256": "0x22075888d9ca00c08120612beb55e5afdaa5583c9419a5b76d4d1fe0bd0c68a4",
 			"urls": [
-				"bzzr://4e947e00afeca3809bd7bdde04e92e616e77efa9e4ddde344f52896d21e39006"
+				"bzz-raw://47570c4cafb8e8706facc9be7d69d1c8e502d8d9ac17fad8988a84dd9ba219ee",
+				"dweb:/ipfs/QmPGoT7QkxNZ48fjc7GYSLfFyJV42P9uMV5Dnfy4fWEEjd"
 			]
 		},
 		"localhost/contracts/interfaces/SnowflakeResolverInterface.sol": {
 			"keccak256": "0x8a5595a41d86f78514dfcd6eaa0ec79482187b8ead1c8c129faab29aeb2aced1",
 			"urls": [
-				"bzzr://1f741c8e9d50535a1a18c71c689e1e2876cd75e30256273ffeb2b47b72bcbb76"
+				"bzz-raw://adce9474a5bdaf71df2dd13b274be5e133aea40a45ac477cff3affa7b36c04f2",
+				"dweb:/ipfs/QmPPUi5d3uqA8dgLkJY6NUJZXNkV2gHCCbgtUXdb1Q42D4"
 			]
 		},
 		"localhost/contracts/resolvers/Voting.sol": {
-			"keccak256": "0xaa83f525002a63a1df30a3a1218a2955a866eb2606fe54fdeecd2b05c315e2f6",
+			"keccak256": "0xc2a112a23e5ca5e76b05c848643abbe5396dc87c9b998b285e9e560f26671c25",
 			"urls": [
-				"bzzr://5f0116c913dff738bfba12ed9c7f7e9eb706ab0993509bd8ced20b1f04dd05c3"
+				"bzz-raw://bf47a6f2bdeadf46548665f78a161fdc3a87c2cccfbfc29908c72edc144fa757",
+				"dweb:/ipfs/QmXqZHJAJyHbtYq2gvdbaAYRs4C2Y4CC5Wa3ZzjiuRD1X6"
 			]
 		},
 		"localhost/contracts/zeppelin/ownership/Ownable.sol": {
 			"keccak256": "0x1fbe7f67d6b8ac1f5aff86a9da41833273e073c47ce1e160f9addd9c64d9ff1d",
 			"urls": [
-				"bzzr://1a147508938228cad4bbc0f17c66e6d541d8740e8ae521dab377fe1519f801f1"
+				"bzz-raw://93d3790757d1984cef393a056010cc4269002c1aa93d635fabc8f169ef0707e8",
+				"dweb:/ipfs/QmdSDJUXB5vEXud6BJGc6TSQMBG8trJ4ZYH2onq39taBKa"
 			]
 		}
 	},

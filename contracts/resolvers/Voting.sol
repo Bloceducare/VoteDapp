@@ -139,10 +139,12 @@ function onAddition(uint256 ein,uint256 /**allocation**/,bytes memory) public se
  //anyone who wants to become a candidate
  //1000 hydro tokens are deducted from the wallet of msg.sender and burnt
  function becomeCandidate(uint256 ein) public isParticipant(ein)  voteStillValid() isNotCandidate(ein){
-    // SnowflakeInterface snowfl=SnowflakeInterface(snowflakeAddress);
-    // HydroInterface hydro = HydroInterface(snowfl.hydroTokenAddress());
+     SnowflakeInterface snowfl=SnowflakeInterface(snowflakeAddress);
+     HydroInterface hydro = HydroInterface(snowfl.hydroTokenAddress());
     uint256 candidateCount= candidateEINs.length;
     require(candidateCount<=maxNoOfCandidates,"candidate limit reached!");
+
+    hydro.burnFrom(msg.sender,burnAmount);
     aCandidate[ein]=true;
     candidateEINs.push(ein);
     emit becameCandidate(ein);

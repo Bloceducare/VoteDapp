@@ -163,10 +163,10 @@
 			]
 		},
 		"localhost/contracts/interfaces/HydroInterface.sol": {
-			"keccak256": "0xd2cf83a1bc63bc4f439ae98e6a95cb0eed24a1b36fe36a1003ad481cac15cc7b",
+			"keccak256": "0x56647cb0f09d042392f3e117790be3fccd7622594ef904a4fee4f46f91c21683",
 			"urls": [
-				"bzz-raw://c719482ab4d6bfa3867bab6a4492bb1efa5f2b8ee7dde2e7aaac0611b2220263",
-				"dweb:/ipfs/QmevLAgXu8e3M7RL4bgZToR9unE1TUaw11j6LavwiDeSGS"
+				"bzz-raw://e2de34c8f607732b8f4af1e5d1b5da86975c5d2985e7adf5d1c94f4de770d214",
+				"dweb:/ipfs/QmcA9zkG6KxzmsY6atKgVb3QPtEZ37Bq7zYouYGhBuVUxm"
 			]
 		},
 		"localhost/contracts/interfaces/IdentityRegistryInterface.sol": {
@@ -191,10 +191,10 @@
 			]
 		},
 		"localhost/contracts/resolvers/Voting.sol": {
-			"keccak256": "0xdbc28be5883c43d3e6cbbb1cd875811ccdcfb436503cbffadbc5cfc28ae896a8",
+			"keccak256": "0xc2a112a23e5ca5e76b05c848643abbe5396dc87c9b998b285e9e560f26671c25",
 			"urls": [
-				"bzz-raw://0d2c9971e96c44bb6334e8b37cb848cb8ee99b2a84f212eef43c138b1d8fec00",
-				"dweb:/ipfs/QmdRGDPz9nSuofZSMqmFupUSpvNrxWpnoGHM54ogbTEGug"
+				"bzz-raw://bf47a6f2bdeadf46548665f78a161fdc3a87c2cccfbfc29908c72edc144fa757",
+				"dweb:/ipfs/QmXqZHJAJyHbtYq2gvdbaAYRs4C2Y4CC5Wa3ZzjiuRD1X6"
 			]
 		},
 		"localhost/contracts/resolvers/electionFactory.sol": {
