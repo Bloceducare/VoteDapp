@@ -572,60 +572,60 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/contracts/resolvers/Voting.sol": "Voting"
+			"localhost/../VoteDapp/contracts/resolvers/Voting.sol": "Voting"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"localhost/contracts/SnowflakeResolver.sol": {
+		"localhost/../VoteDapp/contracts/SnowflakeResolver.sol": {
 			"keccak256": "0x47767c5bf5606300e05d8a37ac8696101621cc182a608fcd5b44f7581904991f",
 			"urls": [
 				"bzz-raw://772a6c8f6129ece514c7b22f1f923f068568bc54480a75e2ac441d87cc18d084",
 				"dweb:/ipfs/QmdVzXNzAaQbVfR2KNd41U6dV2XQnndJGoRM4wX5Rgcbah"
 			]
 		},
-		"localhost/contracts/interfaces/HydroInterface.sol": {
-			"keccak256": "0x56647cb0f09d042392f3e117790be3fccd7622594ef904a4fee4f46f91c21683",
+		"localhost/../VoteDapp/contracts/interfaces/HydroInterface.sol": {
+			"keccak256": "0xf7279bffebd5eb0d1bdc3500e8a12029ddc3249879061e677dc533eac3c8a8fc",
 			"urls": [
-				"bzz-raw://e2de34c8f607732b8f4af1e5d1b5da86975c5d2985e7adf5d1c94f4de770d214",
-				"dweb:/ipfs/QmcA9zkG6KxzmsY6atKgVb3QPtEZ37Bq7zYouYGhBuVUxm"
+				"bzz-raw://4e0afb90c0e3c62d5ed48e63a010b868ffc142eaf01e772da657803daed61bf3",
+				"dweb:/ipfs/QmNpxvCMds25r1wEASuSDanMEKXKWiwJd3Fzoxi3rG2FJ2"
 			]
 		},
-		"localhost/contracts/interfaces/IdentityRegistryInterface.sol": {
+		"localhost/../VoteDapp/contracts/interfaces/IdentityRegistryInterface.sol": {
 			"keccak256": "0xb559191dbd30da97a8b5759a895d7f4eff420eedc55b0786ae7206fbe384dc15",
 			"urls": [
 				"bzz-raw://4ca73a9731d9a2dd9603593b2d847af126e20af8d4242edb91d5bfba5107149d",
 				"dweb:/ipfs/QmdJ5oW52QuXipANPCy8sJPwULkdXmVWjAPEWgPoy9oudk"
 			]
 		},
-		"localhost/contracts/interfaces/SnowflakeInterface.sol": {
+		"localhost/../VoteDapp/contracts/interfaces/SnowflakeInterface.sol": {
 			"keccak256": "0x22075888d9ca00c08120612beb55e5afdaa5583c9419a5b76d4d1fe0bd0c68a4",
 			"urls": [
 				"bzz-raw://47570c4cafb8e8706facc9be7d69d1c8e502d8d9ac17fad8988a84dd9ba219ee",
 				"dweb:/ipfs/QmPGoT7QkxNZ48fjc7GYSLfFyJV42P9uMV5Dnfy4fWEEjd"
 			]
 		},
-		"localhost/contracts/interfaces/SnowflakeResolverInterface.sol": {
+		"localhost/../VoteDapp/contracts/interfaces/SnowflakeResolverInterface.sol": {
 			"keccak256": "0x8a5595a41d86f78514dfcd6eaa0ec79482187b8ead1c8c129faab29aeb2aced1",
 			"urls": [
 				"bzz-raw://adce9474a5bdaf71df2dd13b274be5e133aea40a45ac477cff3affa7b36c04f2",
 				"dweb:/ipfs/QmPPUi5d3uqA8dgLkJY6NUJZXNkV2gHCCbgtUXdb1Q42D4"
 			]
 		},
-		"localhost/contracts/resolvers/Voting.sol": {
-			"keccak256": "0xc2a112a23e5ca5e76b05c848643abbe5396dc87c9b998b285e9e560f26671c25",
+		"localhost/../VoteDapp/contracts/resolvers/Voting.sol": {
+			"keccak256": "0xd471fe7c089a65ed1e147df3f43a40bcd946f66d108f40fe87392f752b9ebb82",
 			"urls": [
-				"bzz-raw://bf47a6f2bdeadf46548665f78a161fdc3a87c2cccfbfc29908c72edc144fa757",
-				"dweb:/ipfs/QmXqZHJAJyHbtYq2gvdbaAYRs4C2Y4CC5Wa3ZzjiuRD1X6"
+				"bzz-raw://9a8576944eba16c1af8baf03a124809d0afd20a1f455ced972d3253a7b941fac",
+				"dweb:/ipfs/QmUjG1uwJeYg33FPLg1uBNqNTAKR93bEtgwroWFAZdLoZE"
 			]
 		},
-		"localhost/contracts/zeppelin/ownership/Ownable.sol": {
+		"localhost/../VoteDapp/contracts/zeppelin/ownership/Ownable.sol": {
 			"keccak256": "0x1fbe7f67d6b8ac1f5aff86a9da41833273e073c47ce1e160f9addd9c64d9ff1d",
 			"urls": [
 				"bzz-raw://93d3790757d1984cef393a056010cc4269002c1aa93d635fabc8f169ef0707e8",

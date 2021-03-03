@@ -1,35 +1,44 @@
 {
 	"compiler": {
-		"version": "0.5.0+commit.1d4f565a"
+		"version": "0.6.12+commit.27d51765"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [],
 		"devdoc": {
-			"details": "Wrappers over Solidity's arithmetic operations with added overflow checks. * Arithmetic operations in Solidity wrap on overflow. This can easily result in bugs, because programmers usually assume that an overflow raises an error, which is the standard behavior in high level programming languages. `SafeMath` restores this intuition by reverting the transaction when an operation overflows. * Using this library instead of the unchecked operations eliminates an entire class of bugs, so it's recommended to use it always.",
-			"methods": {}
+			"details": "Math operations with safety checks that throw on error",
+			"kind": "dev",
+			"methods": {},
+			"title": "SafeMath",
+			"version": 1
 		},
 		"userdoc": {
-			"methods": {}
+			"kind": "user",
+			"methods": {},
+			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/contracts/_testing/HydroToken.sol": "SafeMath"
+			"localhost/../VoteDapp/contracts/_testing/HydroToken.sol": "SafeMath"
 		},
-		"evmVersion": "byzantium",
+		"evmVersion": "istanbul",
 		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"localhost/contracts/_testing/HydroToken.sol": {
-			"keccak256": "0xb6ad9fc6100639501a36921082b8d7a74938739dffadcb9a3bdfb497d1314fe4",
+		"localhost/../VoteDapp/contracts/_testing/HydroToken.sol": {
+			"keccak256": "0x256a6a9f3509b65086826d32d90264217098cd2bc0f45ab6c97696c0dc2d12e9",
 			"urls": [
-				"bzzr://ea2f43135dddd5f7fb73f26a4285701857381aaab064ea908a988d1ef8d3cb6a"
+				"bzz-raw://18dbab6e62cf29d5f46c7019c5bd85664f2c6c415f739d7857fbb6d9d8f0fd4e",
+				"dweb:/ipfs/QmPhiwqnQdvYRM5RxAVSrtmYe6dQ2zvAZU6nxh9kZEi4do"
 			]
 		}
 	},

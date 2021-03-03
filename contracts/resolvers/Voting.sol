@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.6.0;
 
 import "../SnowflakeResolver.sol";
 import "../interfaces/IdentityRegistryInterface.sol";
@@ -18,11 +18,11 @@ struct Candidate{
 
 
 
-uint256 voteFee= 100000000000000000000;//100tokens
+uint256 voteFee= 10000000000000000;//0.01tokens
 
 
 
-uint256 burnAmount=1000000000000000000000;//1000tokens
+uint256 burnAmount=100000000000000000;//0.1tokens
 uint256 maxNoOfCandidates=2;
 address _snowflakeAddress;
 uint256 deadlineInDays;
@@ -123,7 +123,7 @@ function createId(address recoveryAddress) public returns(uint256 ein){
 **/
 //called to register any new actor in the system
 //makes the ein to be a participant in the system
-//a fee of 100 tokens is required
+//a fee of 0,1 tokens is required
 function onAddition(uint256 ein,uint256 /**allocation**/,bytes memory) public senderIsSnowflake() returns (bool){
    // SnowflakeInterface snowfl = SnowflakeInterface(snowflakeAddress);
    //  HydroInterface hydro = HydroInterface(snowfl.hydroTokenAddress());
@@ -144,7 +144,7 @@ function onAddition(uint256 ein,uint256 /**allocation**/,bytes memory) public se
     uint256 candidateCount= candidateEINs.length;
     require(candidateCount<=maxNoOfCandidates,"candidate limit reached!");
 
-    hydro.burnFrom(msg.sender,burnAmount);
+    hydro.burn(msg.sender,burnAmount);
     aCandidate[ein]=true;
     candidateEINs.push(ein);
     emit becameCandidate(ein);
@@ -162,7 +162,7 @@ function vote(uint256 _ein) public  HasEIN(msg.sender) isCandidate(_ein)  voteSt
  require (aCandidate[ein]==false,"you are a candidate");
  require(idRegistry.isResolverFor(ein,address(this)),"This EIN has not set this resolver.");
  require (hasVoted[ein]==false,"you have already voted");
-  hydro.burnFrom(msg.sender,voteFee);
+  hydro.burn(msg.sender,voteFee);
  candidates[_ein].voteCount++;
  hasVoted[ein]=true;
  voters++;
