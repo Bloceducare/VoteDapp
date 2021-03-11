@@ -689,18 +689,18 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/Hydro/smart-contracts/snowflake/contracts/interfaces/IdentityRegistryInterface.sol": "IdentityRegistryInterface"
+			"localhost/../VoteDapp/contracts/interfaces/IdentityRegistryInterface.sol": "IdentityRegistryInterface"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"localhost/Hydro/smart-contracts/snowflake/contracts/interfaces/IdentityRegistryInterface.sol": {
+		"localhost/../VoteDapp/contracts/interfaces/IdentityRegistryInterface.sol": {
 			"keccak256": "0xb559191dbd30da97a8b5759a895d7f4eff420eedc55b0786ae7206fbe384dc15",
 			"urls": [
 				"bzz-raw://4ca73a9731d9a2dd9603593b2d847af126e20af8d4242edb91d5bfba5107149d",

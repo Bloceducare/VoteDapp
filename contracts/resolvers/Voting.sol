@@ -1,4 +1,4 @@
-pragma solidity ^0.6.0;
+pragma solidity ^0.5.0;
 
 import "../SnowflakeResolver.sol";
 import "../interfaces/IdentityRegistryInterface.sol";
